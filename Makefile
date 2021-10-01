@@ -25,7 +25,7 @@ install: build
 	
 .PHONY: gofmt
 gofmt:
-	cd $(CURDIR); gofmt -s -d $(shell find . -type f -name '*.go' -print)
+	cd $(CURDIR); test -z $(shell gofmt -s -d $(shell find . -type f -name '*.go' -print))
 
 .PHONY: golint
 golint:
